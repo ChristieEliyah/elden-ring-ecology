@@ -41,6 +41,7 @@ td { background: #1e1e38; }
 .ref-list { font-size: 13px; color: #888; }
 .ref-list li { margin-bottom: 6px; }
 .ref-list a { color: #d4a840; text-decoration: none; }
+.table-source { font-size: 12px; color: #777; margin-top: -12px; margin-bottom: 24px; text-align: right; font-style: italic; }
 .meta-note {
   font-size: 12px; color: #666; text-align: center; margin-top: 48px;
   padding-top: 20px; border-top: 1px solid #333;
@@ -52,17 +53,23 @@ li { margin-bottom: 6px; }
 <body>
 
 <h1>《艾尔登法环》大世界生态设计分析报告</h1>
-<p class="subtitle">——基于C-D-E-C 2022 FromSoftware官方演讲及多方文献的综合分析<br>撰写人：陈思源 | 2026年8月</p>
+<p class="subtitle">——基于CEDEC+KYUSHU 2022 FromSoftware官方演讲及多方文献的综合分析<br>撰写人：陈思源 | 2026年8月</p>
 
 <div class="highlight-box">
   <p><strong>📚 核心参考来源：</strong></p>
   <ol class="ref-list">
-    <li><strong>[1]</strong> 宫内淳、森田鉄平. 「CEDEC+KYUSHU 2022」FromSoftware官方演讲《欢迎来到狭间之地——艾尔登法环的开放世界技术分享》（2022.11）</li>
-    <li><strong>[2]</strong> Datafield.dev. <em>Case Study 19.1: Elden Ring — Open-World Design That Respects Player Time</em>（2023）</li>
-    <li><strong>[3]</strong> Playful Void (Idle Cartulary). <em>Elden Ring and Overworlds: Hostile worlds, line of sight and density</em>（2024.1）——含 Sacha 的 U/C/H 框架引用</li>
-    <li><strong>[4]</strong> Heihuu（机核网）. 《艾尔登法环宁姆格福关卡拆解（野外篇）》（2026.6）</li>
+    <li><strong>[1]</strong> 宫内淳, 森田鉄平. (2022). 「ようこそ、狭間の地へ——ELDEN RINGのオープンワールド技術共有」. <em>CEDEC+KYUSHU 2022</em>, FromSoftware. （日文原题；中译《欢迎来到狭间之地——艾尔登法环的开放世界技术分享》）</li>
+    <li><strong>[2]</strong> Datafield.dev. (2023). <em>Case Study 19.1: Elden Ring — Open-World Design That Respects Player Time</em>. https://datafield.dev/</li>
+    <li><strong>[3]</strong> Playful Void (Idle Cartulary). (2024). <em>Elden Ring and Overworlds: Hostile Worlds, Line of Sight and Density</em>. https://playfulvoid.game.blog/ — 含 Sacha 的 U/C/H（Uniqueness / Complexity / Hostility）框架引用</li>
+    <li><strong>[4]</strong> Heihuu. (2026). 「艾尔登法环宁姆格福关卡拆解（野外篇）」. 机核网. https://www.gcores.com/</li>
   </ol>
 </div>
+
+<h2>分析框架</h2>
+
+<p>本文采用<strong>三层递进</strong>的分析结构：首先从 FromSoftware 官方在 CEDEC 2022 上提出的"大/中/小"三层生态变化模型出发，理解其宏观设计哲学与世界观构建逻辑（第二至第三章）；然后借助 Sacha 的 U/C/H 框架对内容生态进行量化拆解，验证"作者密度"这一核心命题（第四章）；最后下沉到敌兵配置与 POI 引导链的微观层面，分析这些设计原则如何在具体关卡中落地（第五至第六章）。</p>
+
+<p>全文的分析立场是<strong>"作为游戏策划，我能从中提取什么可迁移的方法论"</strong>，而非单纯的鉴赏或学术综述。</p>
 
 <h2>一、FromSoftware的开放世界设计哲学</h2>
 
@@ -94,6 +101,8 @@ li { margin-bottom: 6px; }
   <tr><td>巨人山顶</td><td>纯白 + 暴风雪</td><td>孤独、极端、生存</td><td>大陆尽头，极限考验</td></tr>
 </table>
 
+<p class="table-source">数据来源：[1] CEDEC 2022 官方演讲，区域色调分类为 FromSoftware 原创设计框架</p>
+
 <p>Datafield.dev的案例研究[2]指出，这种区域色调的<strong>不可混淆性</strong>是艾尔登法环探索引导的基石：玩家仅凭视野中的颜色就能判断自己身处哪个区域，形成可靠的"认知锚点"。世界拓扑本身是有逻辑的——盖利德在东、亚坛在上、利耶尼亚在西北——玩家可以<strong>自然定向</strong>而无需打开地图。</p>
 
 <h3>2.2 第二层：中等变化 —— 域内景观差异</h3>
@@ -108,6 +117,8 @@ li { margin-bottom: 6px; }
   <tr><td>沼泽</td><td>水域+泥泞、减速地形</td><td>高密度敌人+隐藏Boss，"软性引导"玩家绕行</td></tr>
   <tr><td>平原/海滨悬崖</td><td>开阔视野、高地落差</td><td>远景地标可见，鼓励"先看后走"</td></tr>
 </table>
+
+<p class="table-source">数据来源：[4] Heihuu 宁姆格福关卡拆解，微生态分类基于原文整理</p>
 
 <p>机核的拆解[4]特别强调了<strong>高低差</strong>在边界处理中的作用：不同于《我的世界》中生态区域逐渐过渡的做法，《艾尔登法环》利用<strong>悬崖和地形落差</strong>强化区域边界，增强了空间辨识度，并暗示了区域间的难度差异。比如宁姆格福的海岛与大陆之间被悬崖+致死海水（Damage Volume）隔开，玩家必须在预设路线推进。</p>
 
@@ -163,6 +174,8 @@ li { margin-bottom: 6px; }
   <tr><td><strong>设施 (Utilities)</strong></td><td>低/低/低</td><td>41</td><td>7.6%</td><td>商人、训练师</td></tr>
   <tr><td><strong>城镇 (Towns)</strong></td><td>高/高/低</td><td>0</td><td>0%</td><td>——（仅节日等限时事件例外）</td></tr>
 </table>
+
+<p class="table-source">数据来源：[3] Playful Void，基于 Sacha 的 U/C/H 框架统计；U=独特性，C=复杂度，H=敌对度</p>
 
 <p>这个统计揭示了几个关键设计特征：</p>
 
@@ -245,17 +258,21 @@ li { margin-bottom: 6px; }
 
 <p><strong>⑥ "视线即关卡"</strong>：在任意位置，确保玩家视野内同时存在多个可交互元素。这需要反复的实地测试——设计师应该亲自遍历地图，确认每个坐标点都能看到"值得去看的东西"。</p>
 
+<p>但回到一个更根本的问题：<strong>艾尔登法环为什么能说服玩家为一款没有任务列表、没有地图图标、没有友善NPC的开放世界投入上百小时？</strong></p>
+
+<p>我的理解是：它用"作者密度"回答了一个争议已久的问题——开放世界是否必须越来越大。在一个程序化生成被视为行业标配的时代，FromSoftware 用 79 平方公里、541 个全手工 POI 证明了：<strong>玩家愿意为手工内容付费的意愿远超行业预期。</strong>地图的大小不决定体验的深度，作者的密度才决定。</p>
+
 <hr style="border-color:#333;margin:36px 0;">
 
-<h2>对白银之城的启发</h2>
+<h2>如果我来做白银之城的关卡策划</h2>
 
-<p>白银之城作为暗黑奇幻风格的开放世界ARPG，与《艾尔登法环》在设计基因上高度契合。基于以上分析，提出三点具体建议：</p>
+<p>分析艾尔登法环对我启发最大的不是"它做得多好"，而是"它用了哪些具体手段达成效果"。如果让我为白银之城做关卡策划，我会重点关注以下三点：</p>
 
-<p><strong>1. 用三层色调变化构建世界认知。</strong>大变化（区域主色调跃迁）让玩家本能地知道自己在哪里；中等变化（域内景观差异）避免同一色调下的无聊；小变化（遗迹、植被、水体细节）填充近景的视觉密度。三层的设计成本是递减的——花最多精力做大变化的处理，中等变化做3-4种模板，小变化用规则批量生成。</p>
+<p><strong>1. 区域色调的不可混淆性。</strong>艾尔登法环五个大区的主色调差异大到玩家不用看地图就能判断位置。白银之城如果是多区域结构，我会优先确保每个区域有一个"一眼就能认出来"的核心色调，而不是先做地形再做配色——这个思路直接来自官方演讲：他们在设计初期就定下了每个区域的色彩基调，地形、植被、光照再围绕这个基调展开。</p>
 
-<p><strong>2. 内容密度比地图面积重要100倍。</strong>不需要做70平方公里的世界。10-15平方公里、每平方公里30+手工制作的内容点（Dungeon/Lair/Scene混合），足以支撑40+小时高质量游玩。关键是"每次抬头都能看到值得去的地方"。</p>
+<p><strong>2. 作者密度是天。</strong>艾尔登法环全图541个手工制作的兴趣点，0个程序生成。这个数据让我重新理解了开放世界的成本结构——与其铺大饼做模板填充，不如把地图控制在可控范围内，确保每走几步就有一个值得停下来看的地方。Datafield.dev 提到"尊重玩家时间"，核心不是地图大小，而是单位时间内的内容密度。</p>
 
-<p><strong>3. 用敌人配置替代任务引导。</strong>白银之城的探索引导，不需要NPC派任务、不需要地图标点。利用敌人的强度梯度、资源分布和地标可见性，让玩家自己决定去哪里——你只需要确保"每个方向都有好东西，但有些地方现在打不过"。</p>
+<p><strong>3. 拒绝安全的社交空间。</strong>541个POI中，城镇数为0——这个数据对我冲击最大。它主动放弃了传统RPG中的"安全区"概念，让整个世界的压迫感贯穿始终。白银之城如果是暗黑奇幻基调，这一条可能比前两条更重要——不是每个开放世界都需要一个给你倒杯茶的安全村。</p>
 
 <p class="meta-note">
   本报告基于 FromSoftware 官方演讲、第三方游戏设计案例研究及关卡拆解文献撰写。<br>
